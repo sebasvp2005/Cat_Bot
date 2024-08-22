@@ -11,7 +11,7 @@ const loadMessagesFromLocalStorage = (): Message[] => {
     if (storedMessages) {
         return JSON.parse(storedMessages);
     }
-    return [{ content: "Welcome to the chat!", role: "assistant" }];
+    return [{ content: "¡Nyaa~! Hola, humano. Soy Kitty, un gato cute kawaii que siempre está listo para ronronear y alegrarte el día. 🐾✨ Con mis patitas suaves y mi cola esponjosa, ¡te traigo mucha energía y abrazos cálidos! ¿Cómo puedo ayudarte hoy, nya?", role: "assistant" }];
 };
 export interface HistoryStore {
     messages: Message[];
