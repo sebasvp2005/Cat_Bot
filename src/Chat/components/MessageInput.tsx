@@ -1,5 +1,6 @@
 import { ReactElement, useState, useRef} from "react";
 import { ChatService } from "../services/chat.service";
+import { useHistoryStore } from "../services/history.store";
 
 
 export const MessageInput = (): ReactElement => {
@@ -7,7 +8,9 @@ export const MessageInput = (): ReactElement => {
     const [message, setMessage] = useState<string>('');
     const textareaRef = useRef<HTMLTextAreaElement | null>(null);
     const chatService = new ChatService();
+    const waitingResponse = useHistoryStore(state => state.waitingResponse);
     const handleSubmit = async() => {
+        if(waitingResponse) return;
         chatService.SendMessage(message);
         setMessage('');
 
@@ -32,7 +35,7 @@ export const MessageInput = (): ReactElement => {
     };
 
     return (
-        <div className="chat-input">
+        <div className= "chat-input bg-white transition-all" style={ waitingResponse ? { backgroundColor: '#d3d3d3', color: "gray"} : {}}>
             <textarea
                 ref={textareaRef}
                 onChange={handleInput}
@@ -47,6 +50,7 @@ export const MessageInput = (): ReactElement => {
                     resize: 'none',
                     padding: '0',
                     border: 'none',
+                    background: 'transparent',
                 }}
                 placeholder="Start typing..."
 

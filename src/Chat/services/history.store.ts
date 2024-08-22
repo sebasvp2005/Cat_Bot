@@ -16,6 +16,8 @@ const loadMessagesFromLocalStorage = (): Message[] => {
 export interface HistoryStore {
     messages: Message[];
     addMessage: (message: Message) => void;
+    waitingResponse: boolean;
+    setWaitingResponse: (value: boolean) => void;
 }
 
 export const useHistoryStore = create<HistoryStore>((set) => ({
@@ -26,5 +28,7 @@ export const useHistoryStore = create<HistoryStore>((set) => ({
             saveMessagesToLocalStorage(updatedMessages);
             return { messages: updatedMessages };
         }),
+    waitingResponse: false,
+    setWaitingResponse: (value: boolean) => set({ waitingResponse: value }),
 }));
 
