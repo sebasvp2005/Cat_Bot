@@ -123,8 +123,8 @@
 
 .chat-box-section{
     height: 100vh;
- 
-    background-image: url('images/fondo.webp');
+
+    background-image: url('/images/fondo.webp');
     background-size: cover;
     background-repeat: no-repeat; 
     background-attachment: fixed; 
@@ -132,10 +132,10 @@
 }
 
 div {
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
   }
   
 div::-webkit-scrollbar {
-    display: none; /* For Chrome, Safari, and Opera */
+    display: none;
 }

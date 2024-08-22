@@ -4,12 +4,11 @@ import { MessagesDisplay } from "../components/MessagesDisplay";
 import { MessageInput } from "../components/MessageInput";
 import { BotInteraction } from "../components/BotInteraction";
 
-
 export const Chat = (): ReactElement => {
 
     return(
         
-        <section className="chat-box-section">
+        <section className="chat-box-section" >
 
             <div className="all-container w-[80%] h-full mx-auto min-w-[1024px] max-lg:min-w-[100%] grid grid-cols-[30%_auto]">
 
