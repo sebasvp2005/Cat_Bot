@@ -18,7 +18,6 @@ export class ChatService {
 
         let reversedHistory = this.history.reverse();
 
-        //api calll
 
         const response = await fetch("https://api-chatbot-gato.vercel.app/generate", {
             method: 'POST',
