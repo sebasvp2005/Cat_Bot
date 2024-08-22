@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 import './Chat.css';
-import { useHistoryStore } from "../services/history.store";
 import { MessagesDisplay } from "../components/MessagesDisplay";
 import { MessageInput } from "../components/MessageInput";
 import { BotInteraction } from "../components/BotInteraction";
@@ -8,10 +7,6 @@ import { BotInteraction } from "../components/BotInteraction";
 
 export const Chat = (): ReactElement => {
 
-    const addMessage = useHistoryStore((state) => state.addMessage);
-
-
-    
     return(
         
         <section className="chat-box-section">
